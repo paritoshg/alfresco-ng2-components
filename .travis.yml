@@ -1,6 +1,6 @@
 language: node_js
 dist: trusty
-sudo: required
+sudo: false
 
 node_js:
   - "5"
@@ -56,6 +56,7 @@ after_success:
 
 cache:
   directories:
+  - node_modules
   - demo-shell-ng2/node_modules
   - ng2-components/ng2-activiti-form/node_modules
   - ng2-components/ng2-activiti-processlist/node_modules

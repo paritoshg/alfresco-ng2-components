@@ -22,10 +22,9 @@ import { TaskQueryRequestRepresentationModel, FilterRepresentationModel } from '
 import { ActivitiProcessService } from '../services/activiti-process.service';
 
 @Component({
-    moduleId: module.id,
     selector: 'activiti-process-instance-list',
-    styleUrls: [ './activiti-processlist.component.css' ],
-    templateUrl: './activiti-processlist.component.html'
+    styles: [ require('./activiti-processlist.component.css')],
+    template: require('./activiti-processlist.component.html')
 })
 export class ActivitiProcessInstanceListComponent implements OnInit, OnChanges {
 
@@ -56,7 +55,7 @@ export class ActivitiProcessInstanceListComponent implements OnInit, OnChanges {
 
     constructor(private processService: ActivitiProcessService, private translate: AlfrescoTranslationService) {
         if (translate !== null) {
-            translate.addTranslationFolder('node_modules/ng2-activiti-processlist/src');
+            translate.addTranslationFolder('public/ng2-activiti-processlist');
         }
     }
 

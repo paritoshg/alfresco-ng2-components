@@ -18,11 +18,12 @@
 import { Component, ElementRef } from '@angular/core';
 import { TextFieldWidgetComponent } from './../textfield-widget.component';
 
+declare var require: any;
+
 @Component({
-    moduleId: module.id,
     selector: 'multiline-text-widget',
-    templateUrl: './multiline-text.widget.html',
-    styleUrls: ['./multiline-text.widget.css']
+    template: require('./multiline-text.widget.html'),
+    styles: [require('./multiline-text.widget.css')]
 })
 export class MultilineTextWidget extends TextFieldWidgetComponent {
 

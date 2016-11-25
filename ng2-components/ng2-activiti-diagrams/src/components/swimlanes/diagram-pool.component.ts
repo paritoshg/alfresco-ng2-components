@@ -19,9 +19,8 @@ import { Component, ElementRef, Input, Output, EventEmitter } from '@angular/cor
 import { DiagramColorService } from '../../services/diagram-color.service';
 
 @Component({
-    moduleId: module.id,
     selector: 'diagram-pool',
-    templateUrl: './diagram-pool.component.html'
+    template: require('./diagram-pool.component.html')
 })
 export class DiagramPoolComponent {
     @Input()

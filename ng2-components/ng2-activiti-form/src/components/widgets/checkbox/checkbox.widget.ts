@@ -18,10 +18,11 @@
 import { Component } from '@angular/core';
 import { WidgetComponent } from './../widget.component';
 
+declare var require: any;
+
 @Component({
-    moduleId: module.id,
     selector: 'checkbox-widget',
-    templateUrl: './checkbox.widget.html'
+    template: require('./checkbox.widget.html')
 })
 export class CheckboxWidget extends WidgetComponent {
 

@@ -47,9 +47,8 @@ const ERROR_FOLDER_ALREADY_EXIST = 409;
  */
 @Component({
     selector: 'alfresco-upload-button',
-    moduleId: module.id,
-    templateUrl: './upload-button.component.html',
-    styleUrls: ['./upload-button.component.css']
+    template: require('./upload-button.component.html'),
+    styles: [require('./upload-button.component.css')]
 })
 export class UploadButtonComponent {
 
@@ -87,7 +86,7 @@ export class UploadButtonComponent {
 
     constructor(public el: ElementRef, private _uploaderService: UploadService, translate: AlfrescoTranslationService) {
         this.translate = translate;
-        translate.addTranslationFolder('node_modules/ng2-alfresco-upload/dist/src');
+        translate.addTranslationFolder('public/ng2-alfresco-upload');
     }
 
     ngOnChanges(changes) {

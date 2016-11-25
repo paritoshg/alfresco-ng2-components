@@ -18,10 +18,11 @@
 import { Component, Input, AfterViewInit, AfterContentChecked, EventEmitter, Output } from '@angular/core';
 import { TabModel, FormFieldModel } from './../core/index';
 
+declare var require: any;
+
 @Component({
-    moduleId: module.id,
     selector: 'tabs-widget',
-    templateUrl: './tabs.widget.html'
+    template: require('./tabs.widget.html')
 })
 export class TabsWidget implements AfterContentChecked, AfterViewInit {
 

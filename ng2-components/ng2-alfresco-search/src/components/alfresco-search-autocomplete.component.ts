@@ -21,14 +21,11 @@ import { AlfrescoThumbnailService } from './../services/alfresco-thumbnail.servi
 import { AlfrescoTranslationService } from 'ng2-alfresco-core';
 
 @Component({
-    moduleId: module.id,
     selector: 'alfresco-search-autocomplete',
-    templateUrl: './alfresco-search-autocomplete.component.html',
-    styleUrls: ['./alfresco-search-autocomplete.component.css']
+    template: require('./alfresco-search-autocomplete.component.html'),
+    styles: [require('./alfresco-search-autocomplete.component.css')]
 })
 export class AlfrescoSearchAutocompleteComponent implements OnInit, OnChanges {
-
-    baseComponentPath = module.id.replace('/components/alfresco-search-autocomplete.component.js', '');
 
     @Input()
     searchTerm: string = '';
@@ -76,7 +73,7 @@ export class AlfrescoSearchAutocompleteComponent implements OnInit, OnChanges {
 
     ngOnInit(): void {
         if (this.translate) {
-            this.translate.addTranslationFolder('node_modules/ng2-alfresco-search/dist/src');
+            this.translate.addTranslationFolder('public/ng2-alfresco-search');
         }
     }
 
@@ -126,7 +123,7 @@ export class AlfrescoSearchAutocompleteComponent implements OnInit, OnChanges {
     getMimeTypeIcon(node: any): string {
         if (node.entry.content && node.entry.content.mimeType) {
             let icon = this.alfrescoThumbnailService.getMimeTypeIcon(node.entry.content.mimeType);
-            return `${this.baseComponentPath}/img/${icon}`;
+            return `public/ng2-alfresco-search/img/${icon}`;
         }
     }
 

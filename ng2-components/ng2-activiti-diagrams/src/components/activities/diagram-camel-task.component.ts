@@ -18,9 +18,8 @@
 import { Component, ElementRef, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
-    moduleId: module.id,
     selector: 'diagram-camel-task',
-    templateUrl: './diagram-camel-task.component.html'
+    template: require('./diagram-camel-task.component.html')
 })
 export class DiagramCamelTaskComponent {
     @Input()

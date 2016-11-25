@@ -28,13 +28,10 @@ declare let componentHandler: any;
 
 @Component({
     selector: 'alfresco-login',
-    moduleId: module.id,
-    templateUrl: './alfresco-login.component.html',
-    styleUrls: ['./alfresco-login.component.css']
+    template: require('./alfresco-login.component.html'),
+    styles: [require('./alfresco-login.component.css')]
 })
 export class AlfrescoLoginComponent implements OnInit {
-
-    baseComponentPath = module.id.replace('/alfresco-login.component.js', '');
 
     isPasswordShow: boolean = false;
 
@@ -83,7 +80,7 @@ export class AlfrescoLoginComponent implements OnInit {
                 public settingsService: AlfrescoSettingsService,
                 private translate: AlfrescoTranslationService) {
 
-        translate.addTranslationFolder('node_modules/ng2-alfresco-login/dist/src');
+        translate.addTranslationFolder('public/ng2-alfresco-login');
 
         this.initFormError();
         this.initFormFieldsMessages();
@@ -152,18 +149,18 @@ export class AlfrescoLoginComponent implements OnInit {
     private performeLogin(values: any) {
         this.authService.login(values.username, values.password)
             .subscribe(
-            (token: any) => {
-                this.success = true;
-                this.onSuccess.emit({token: token, username: values.username, password: values.password});
-            },
-            (err: any) => {
-                this.enableError();
-                this.errorMsg = 'LOGIN.MESSAGES.LOGIN-ERROR-CREDENTIALS';
-                this.onError.emit(err);
-                console.log(err);
-            },
-            () => console.log('Login done')
-        );
+                (token: any) => {
+                    this.success = true;
+                    this.onSuccess.emit({token: token, username: values.username, password: values.password});
+                },
+                (err: any) => {
+                    this.enableError();
+                    this.errorMsg = 'LOGIN.MESSAGES.LOGIN-ERROR-CREDENTIALS';
+                    this.onError.emit(err);
+                    console.log(err);
+                },
+                () => console.log('Login done')
+            );
     }
 
     /**

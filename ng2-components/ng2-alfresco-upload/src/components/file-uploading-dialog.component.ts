@@ -33,9 +33,8 @@ import { UploadService } from '../services/upload.service';
  */
 @Component({
     selector: 'file-uploading-dialog',
-    moduleId: module.id,
-    templateUrl: './file-uploading-dialog.component.html',
-    styleUrls: ['./file-uploading-dialog.component.css'],
+    template: require('./file-uploading-dialog.component.html'),
+    styles: [require('./file-uploading-dialog.component.css')],
     host: {'[class.dialog-show]': 'toggleShowDialog'}
 })
 export class FileUploadingDialogComponent implements OnInit, OnDestroy {
@@ -54,7 +53,7 @@ export class FileUploadingDialogComponent implements OnInit, OnDestroy {
     constructor(private cd: ChangeDetectorRef,
                 translate: AlfrescoTranslationService,
                 private _uploaderService: UploadService) {
-        translate.addTranslationFolder('./src');
+        translate.addTranslationFolder('public/ng2-alfresco-upload');
     }
 
     ngOnInit() {

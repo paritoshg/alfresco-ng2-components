@@ -18,9 +18,8 @@
 import { Component, ElementRef, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
-    moduleId: module.id,
     selector: 'diagram-lanes',
-    templateUrl: './diagram-lanes.component.html'
+    template: require('./diagram-lanes.component.html')
 })
 export class DiagramLanesComponent {
     @Input()

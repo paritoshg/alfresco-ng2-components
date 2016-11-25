@@ -19,9 +19,8 @@ import { Component, ElementRef, Input, Output, EventEmitter } from '@angular/cor
 import { DiagramColorService } from '../../services/diagram-color.service';
 
 @Component({
-    moduleId: module.id,
     selector: 'diagram-container-icon-event',
-    templateUrl: './diagram-container-icon-event.component.html'
+    template: require('./diagram-container-icon-event.component.html')
 })
 export class DiagramContainerIconEventTaskComponent {
     @Input()

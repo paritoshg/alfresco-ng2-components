@@ -26,9 +26,8 @@ declare let componentHandler: any;
 
 @Component({
     selector: 'ng2-alfresco-userinfo',
-    moduleId: module.id,
-    styleUrls: ['./user-info.component.css'],
-    templateUrl: './user-info.component.html'
+    styles: [require('./user-info.component.css')],
+    template: require('./user-info.component.html')
 })
 export class UserInfoComponent implements AfterViewChecked, OnInit {
 
@@ -44,13 +43,11 @@ export class UserInfoComponent implements AfterViewChecked, OnInit {
     @Input()
     fallBackThumbnailImage: string;
 
-    private baseComponentPath = module.id.replace('components/user-info.component.js', '');
-
     ecmUser: EcmUserModel;
 
     bpmUser: BpmUserModel;
 
-    anonymousImageUrl: string = this.baseComponentPath + 'img/anonymous.gif';
+    anonymousImageUrl: string = 'public/ng2-alfresco-userinfo/img/anonymous.gif';
 
     bpmUserImage: any;
 
@@ -61,7 +58,7 @@ export class UserInfoComponent implements AfterViewChecked, OnInit {
                 private authService: AlfrescoAuthenticationService,
                 private translate: AlfrescoTranslationService) {
         if (translate) {
-            translate.addTranslationFolder('node_modules/ng2-alfresco-userinfo/src');
+            translate.addTranslationFolder('public/ng2-alfresco-userinfo');
         }
 
         authService.loginSubject.subscribe((response) => {

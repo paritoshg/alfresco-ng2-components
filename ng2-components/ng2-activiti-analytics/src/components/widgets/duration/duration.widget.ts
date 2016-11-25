@@ -21,10 +21,9 @@ import { ReportParameterDetailsModel, ParameterValueModel } from './../../../mod
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
-    moduleId: module.id,
     selector: 'duration-widget',
-    templateUrl: './duration.widget.html',
-    styleUrls: ['./duration.widget.css']
+    template: require('./duration.widget.html'),
+    styles: [require('./duration.widget.css')]
 })
 export class DurationWidget extends NumberWidget implements OnInit {
 

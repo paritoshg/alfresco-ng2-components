@@ -25,9 +25,8 @@ declare let componentHandler: any;
 
 @Component({
     selector: 'activiti-process-instance-filters',
-    moduleId: module.id,
-    templateUrl: './activiti-filters.component.html',
-    styleUrls: ['activiti-filters.component.css']
+    template: require('./activiti-filters.component.html'),
+    styles: [require('./activiti-filters.component.css')]
 })
 export class ActivitiProcessFilters implements OnInit, OnChanges {
 
@@ -58,7 +57,7 @@ export class ActivitiProcessFilters implements OnInit, OnChanges {
         this.filter$ = new Observable<FilterRepresentationModel>(observer => this.filterObserver = observer).share();
 
         if (translate) {
-            translate.addTranslationFolder('node_modules/ng2-activiti-processlist/src');
+            translate.addTranslationFolder('public/ng2-activiti-processlist');
         }
     }
 

@@ -22,9 +22,8 @@ import { DiagramColorService } from '../services/diagram-color.service';
 import { RaphaelService } from './raphael/raphael.service';
 
 @Component({
-    moduleId: module.id,
     selector: 'activiti-diagram',
-    templateUrl: './diagram.component.html'
+    template: require('./diagram.component.html')
 })
 export class DiagramComponent {
     @Input()
@@ -54,7 +53,7 @@ export class DiagramComponent {
                 private raphaelService: RaphaelService,
                 private diagramsService: DiagramsService) {
         if (translate) {
-            translate.addTranslationFolder('node_modules/ng2-activiti-analytics/src');
+            translate.addTranslationFolder('public/ng2-activiti-diagrams');
         }
         this.elementRef = elementRef;
     }

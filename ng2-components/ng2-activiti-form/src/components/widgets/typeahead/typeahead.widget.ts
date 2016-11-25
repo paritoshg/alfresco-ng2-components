@@ -21,11 +21,12 @@ import { WidgetComponent } from './../widget.component';
 import { FormFieldOption } from './../core/form-field-option';
 import { WidgetVisibilityService } from '../../../services/widget-visibility.service';
 
+declare var require: any;
+
 @Component({
-    moduleId: module.id,
     selector: 'typeahead-widget',
-    templateUrl: './typeahead.widget.html',
-    styleUrls: ['./typeahead.widget.css']
+    template: require('./typeahead.widget.html'),
+    styles: [require('./typeahead.widget.css')]
 })
 export class TypeaheadWidget extends WidgetComponent implements OnInit {
 

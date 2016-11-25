@@ -20,11 +20,12 @@ import { CellEditorComponent } from './../cell.editor';
 import { DynamicTableRow, DynamicTableColumn, DynamicTableColumnOption } from './../../dynamic-table.widget.model';
 import { FormService } from './../../../../../services/form.service';
 
+declare var require: any;
+
 @Component({
-    moduleId: module.id,
     selector: 'alf-dropdown-editor',
-    templateUrl: './dropdown.editor.html',
-    styleUrls: ['./dropdown.editor.css']
+    template: require('./dropdown.editor.html'),
+    styles: [require('./dropdown.editor.css')]
 })
 export class DropdownEditorComponent extends CellEditorComponent implements OnInit {
 

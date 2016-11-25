@@ -18,9 +18,8 @@
 import { Component, ElementRef, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
-    moduleId: module.id,
     selector: 'diagram-box-publish-task',
-    templateUrl: './diagram-box-publish-task.component.html'
+    template: require('./diagram-box-publish-task.component.html')
 })
 export class DiagramBoxPublishTaskComponent {
     @Input()

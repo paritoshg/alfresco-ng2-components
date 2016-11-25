@@ -46,11 +46,12 @@ import { WidgetVisibilityService }  from './../services/widget-visibility.servic
  *
  * @returns {ActivitiForm} .
  */
+declare var require: any;
+
 @Component({
-    moduleId: module.id,
     selector: 'activiti-start-form',
-    templateUrl: './activiti-start-form.component.html',
-    styleUrls: ['./activiti-form.component.css']
+    template: require('./activiti-start-form.component.html'),
+    styles: [require('./activiti-form.component.css')]
 })
 export class ActivitiStartForm extends ActivitiForm implements OnInit, AfterViewChecked, OnChanges {
 
@@ -83,7 +84,7 @@ export class ActivitiStartForm extends ActivitiForm implements OnInit, AfterView
         }
 
         if (this.translate) {
-            this.translate.addTranslationFolder('node_modules/ng2-activiti-form/src');
+            this.translate.addTranslationFolder('public/ng2-activiti-form');
         }
     }
 

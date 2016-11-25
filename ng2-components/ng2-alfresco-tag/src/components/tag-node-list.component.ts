@@ -27,10 +27,9 @@ import { TagService } from '../services/tag.service';
  */
 
 @Component({
-    moduleId: module.id,
     selector: 'alfresco-tag-node-list',
-    templateUrl: './tag-node-list.component.html',
-    styleUrls: ['./tag-node-list.component.css']
+    template: require('./tag-node-list.component.html'),
+    styles: [require('./tag-node-list.component.css')]
 })
 export class TagNodeList {
 

@@ -38,7 +38,7 @@ describe('AlfrescoSearchAutocompleteComponent', () => {
     let updateSearchTerm = (newSearchTerm: string): void => {
         let oldSearchTerm = component.searchTerm;
         component.searchTerm = newSearchTerm;
-        component.ngOnChanges({searchTerm: { currentValue: newSearchTerm, previousValue: oldSearchTerm}});
+        component.ngOnChanges({searchTerm: {currentValue: newSearchTerm, previousValue: oldSearchTerm}});
     };
 
     beforeEach(async(() => {
@@ -46,7 +46,7 @@ describe('AlfrescoSearchAutocompleteComponent', () => {
             imports: [
                 CoreModule
             ],
-            declarations: [ AlfrescoSearchAutocompleteComponent ], // declare the test component
+            declarations: [AlfrescoSearchAutocompleteComponent], // declare the test component
             providers: [
                 {provide: AlfrescoTranslationService, useClass: TranslationMock},
                 AlfrescoThumbnailService,
@@ -84,12 +84,12 @@ describe('AlfrescoSearchAutocompleteComponent', () => {
                 .and.returnValue(Promise.resolve(result));
 
             component.searchTerm = 'searchTerm';
-            component.ngOnChanges({searchTerm: { currentValue: 'searchTerm', previousValue: ''} });
+            component.ngOnChanges({searchTerm: {currentValue: 'searchTerm', previousValue: ''}});
 
             fixture.whenStable().then(() => {
                 fixture.detectChanges();
                 component.searchTerm = 'searchTerm2';
-                component.ngOnChanges({searchTerm: { currentValue: 'searchTerm2', previousValue: 'searchTerm'} });
+                component.ngOnChanges({searchTerm: {currentValue: 'searchTerm2', previousValue: 'searchTerm'}});
                 fixture.detectChanges();
                 expect(element.querySelectorAll('table[data-automation-id="autocomplete_results"] tbody tr').length).toBe(0);
             });
@@ -102,8 +102,8 @@ describe('AlfrescoSearchAutocompleteComponent', () => {
 
             component.resultsLoad.subscribe(() => {
                 fixture.detectChanges();
-                expect( element.querySelector('#result_user_0').innerHTML).toBe('John Doe');
-                expect( element.querySelector('#result_name_0').innerHTML).toBe('<b _ngcontent-a-1="">MyDoc</b>');
+                expect(element.querySelector('#result_user_0').innerHTML).toBe('John Doe');
+                expect(element.querySelector('#result_name_0').innerHTML).toBe('<b _ngcontent-a-1="">MyDoc</b>');
                 done();
             });
 
@@ -129,9 +129,6 @@ describe('AlfrescoSearchAutocompleteComponent', () => {
 
             spyOn(searchService, 'getQueryNodesPromise')
                 .and.returnValue(Promise.resolve(result));
-
-            component.baseComponentPath = 'http://localhost';
-
             let thumbnailService = fixture.debugElement.injector.get(AlfrescoThumbnailService);
             spyOn(thumbnailService, 'getMimeTypeIcon').and.returnValue('fake-type-icon.svg');
             spyOn(thumbnailService, 'getMimeTypeKey').and.returnValue('FAKE_TYPE');
@@ -176,7 +173,8 @@ describe('AlfrescoSearchAutocompleteComponent', () => {
 
         it('should display an error if an error is encountered running the search', (done) => {
 
-            component.resultsLoad.subscribe(() => {}, () => {
+            component.resultsLoad.subscribe(() => {
+            }, () => {
                 fixture.detectChanges();
                 let resultsEl = element.querySelector('[data-automation-id="autocomplete_results"]');
                 let errorEl = <any> element.querySelector('[data-automation-id="autocomplete_error_message"]');
@@ -196,7 +194,7 @@ describe('AlfrescoSearchAutocompleteComponent', () => {
             fixture.whenStable().then(() => {
                 fixture.detectChanges();
                 component.searchTerm = 'searchTerm2';
-                component.ngOnChanges({searchTerm: { currentValue: 'searchTerm2', previousValue: 'searchTerm'} });
+                component.ngOnChanges({searchTerm: {currentValue: 'searchTerm2', previousValue: 'searchTerm'}});
                 fixture.detectChanges();
                 let errorEl = <any> element.querySelector('[data-automation-id="autocomplete_error_message"]');
                 expect(errorEl).toBeNull();

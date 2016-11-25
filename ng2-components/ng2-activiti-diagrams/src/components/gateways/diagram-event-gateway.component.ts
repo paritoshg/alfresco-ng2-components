@@ -19,9 +19,8 @@ import { Component, ElementRef, Input, Output, EventEmitter } from '@angular/cor
 import { DiagramColorService } from '../../services/diagram-color.service';
 
 @Component({
-    moduleId: module.id,
     selector: 'diagram-event-gateway',
-    templateUrl: './diagram-event-gateway.component.html'
+    template: require('./diagram-event-gateway.component.html')
 })
 export class DiagramEventGatewayComponent {
     @Input()

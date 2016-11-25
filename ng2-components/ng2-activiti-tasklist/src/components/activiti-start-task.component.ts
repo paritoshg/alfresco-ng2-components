@@ -25,9 +25,8 @@ declare let dialogPolyfill: any;
 
 @Component({
     selector: 'activiti-start-task',
-    moduleId: module.id,
-    templateUrl: './activiti-start-task.component.html',
-    styleUrls: ['./activiti-start-task.component.css']
+    template: require('./activiti-start-task.component.html'),
+    styles: [require('./activiti-start-task.component.css')]
 })
 export class ActivitiStartTaskButton {
 
@@ -53,7 +52,7 @@ export class ActivitiStartTaskButton {
                 private taskService: ActivitiTaskListService) {
 
         if (translate) {
-            translate.addTranslationFolder('node_modules/ng2-activiti-tasklist/src');
+            translate.addTranslationFolder('public/ng2-activiti-tasklist');
         }
     }
 

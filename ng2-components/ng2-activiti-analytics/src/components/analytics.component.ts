@@ -22,10 +22,9 @@ import { ReportQuery } from '../models/report.model';
 import { Chart } from '../models/chart.model';
 
 @Component({
-    moduleId: module.id,
     selector: 'activiti-analytics',
-    templateUrl: './analytics.component.html',
-    styleUrls: ['./analytics.component.css']
+    template: require('./analytics.component.html'),
+    styles: [require('./analytics.component.css')]
 })
 export class AnalyticsComponent implements OnChanges {
 
@@ -69,7 +68,7 @@ export class AnalyticsComponent implements OnChanges {
                 private analyticsService: AnalyticsService) {
         console.log('AnalyticsComponent');
         if (translate) {
-            translate.addTranslationFolder('node_modules/ng2-activiti-analytics/src');
+            translate.addTranslationFolder('public/ng2-activiti-analytics');
         }
     }
 

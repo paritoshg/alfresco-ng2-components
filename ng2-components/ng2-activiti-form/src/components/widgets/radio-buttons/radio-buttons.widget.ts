@@ -21,11 +21,12 @@ import { FormService } from '../../../services/form.service';
 import { FormFieldOption } from './../core/form-field-option';
 import { WidgetVisibilityService } from '../../../services/widget-visibility.service';
 
+declare var require: any;
+
 @Component({
-    moduleId: module.id,
     selector: 'radio-buttons-widget',
-    templateUrl: './radio-buttons.widget.html',
-    styleUrls: ['./radio-buttons.widget.css']
+    template: require('./radio-buttons.widget.html'),
+    styles: [require('./radio-buttons.widget.css')]
 })
 export class RadioButtonsWidget extends WidgetComponent implements OnInit {
 

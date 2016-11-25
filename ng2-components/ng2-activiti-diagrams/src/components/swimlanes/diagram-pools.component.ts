@@ -18,9 +18,8 @@
 import { Component, ElementRef, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
-    moduleId: module.id,
     selector: 'diagram-pools',
-    templateUrl: './diagram-pools.component.html'
+    template: require('./diagram-pools.component.html')
 })
 export class DiagramPoolsComponent {
     @Input()

@@ -22,14 +22,11 @@ import { AlfrescoThumbnailService } from './../services/alfresco-thumbnail.servi
 import { AlfrescoTranslationService } from 'ng2-alfresco-core';
 
 @Component({
-    moduleId: module.id,
     selector: 'alfresco-search',
-    styleUrls: ['./alfresco-search.component.css'],
-    templateUrl: './alfresco-search.component.html'
+    styles: [require('./alfresco-search.component.css')],
+    template: require('./alfresco-search.component.html')
 })
 export class AlfrescoSearchComponent implements OnChanges, OnInit {
-
-    baseComponentPath = module.id.replace('/components/alfresco-search.component.js', '');
 
     @Input()
     searchTerm: string = '';
@@ -66,7 +63,7 @@ export class AlfrescoSearchComponent implements OnChanges, OnInit {
 
     ngOnInit(): void {
         if (this.translate !== null) {
-            this.translate.addTranslationFolder('node_modules/ng2-alfresco-search/dist/src');
+            this.translate.addTranslationFolder('public/ng2-alfresco-search');
         }
         if (this.route) {
             this.route.params.forEach((params: Params) => {
@@ -93,7 +90,7 @@ export class AlfrescoSearchComponent implements OnChanges, OnInit {
     getMimeTypeIcon(node: any): string {
         if (node.entry.content && node.entry.content.mimeType) {
             let icon = this._alfrescoThumbnailService.getMimeTypeIcon(node.entry.content.mimeType);
-            return `${this.baseComponentPath}/img/${icon}`;
+            return `public/ng2-alfresco-search/img/${icon}`;
         }
     }
 

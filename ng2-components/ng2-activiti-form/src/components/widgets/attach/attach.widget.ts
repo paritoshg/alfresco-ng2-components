@@ -22,11 +22,12 @@ import { ExternalContent } from '../core/external-content';
 import { ExternalContentLink } from '../core/external-content-link';
 import { FormFieldModel } from '../core/form-field.model';
 
+declare var require: any;
+
 @Component({
-    moduleId: module.id,
     selector: 'attach-widget',
-    templateUrl: './attach.widget.html',
-    styleUrls: ['./attach.widget.css']
+    template: require('./attach.widget.html'),
+    styles: [require('./attach.widget.css')]
 })
 export class AttachWidget extends WidgetComponent implements OnInit {
 

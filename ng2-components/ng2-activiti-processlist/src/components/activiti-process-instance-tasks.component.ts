@@ -28,9 +28,8 @@ declare let dialogPolyfill: any;
 
 @Component({
     selector: 'activiti-process-instance-tasks',
-    moduleId: module.id,
-    templateUrl: './activiti-process-instance-tasks.component.html',
-    styleUrls: ['./activiti-process-instance-tasks.component.css']
+    template: require('./activiti-process-instance-tasks.component.html'),
+    styles: [require('./activiti-process-instance-tasks.component.css')]
 })
 export class ActivitiProcessInstanceTasks implements OnInit {
 
@@ -70,7 +69,7 @@ export class ActivitiProcessInstanceTasks implements OnInit {
     constructor(private translate: AlfrescoTranslationService,
                 private activitiProcess: ActivitiProcessService) {
         if (translate) {
-            translate.addTranslationFolder('node_modules/ng2-activiti-processlist/src');
+            translate.addTranslationFolder('public/ng2-activiti-processlist');
         }
 
         this.task$ = new Observable<TaskDetailsModel>(observer => this.taskObserver = observer).share();

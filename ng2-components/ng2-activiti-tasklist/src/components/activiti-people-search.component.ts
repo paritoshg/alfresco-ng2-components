@@ -25,9 +25,8 @@ declare let componentHandler: any;
 
 @Component({
     selector: 'activiti-people-search',
-    moduleId: module.id,
-    templateUrl: './activiti-people-search.component.html',
-    styleUrls: ['./activiti-people-search.component.css']
+    template: require('./activiti-people-search.component.html'),
+    styles: [require('./activiti-people-search.component.css')]
 })
 
 export class ActivitiPeopleSearch implements OnInit, AfterViewInit {
@@ -47,7 +46,7 @@ export class ActivitiPeopleSearch implements OnInit, AfterViewInit {
 
     constructor(private translate: AlfrescoTranslationService) {
         if (translate) {
-            translate.addTranslationFolder('node_modules/ng2-activiti-tasklist/src');
+            translate.addTranslationFolder('public/ng2-activiti-tasklist');
         }
 
         this.searchUser

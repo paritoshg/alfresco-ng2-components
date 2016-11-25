@@ -18,11 +18,12 @@
 import { Component } from '@angular/core';
 import { WidgetComponent } from './../widget.component';
 
+declare var require: any;
+
 @Component({
-    moduleId: module.id,
     selector: 'display-text-widget',
-    templateUrl: './display-text.widget.html',
-    styleUrls: ['./display-text.widget.css']
+    template: require('./display-text.widget.html'),
+    styles: [require('./display-text.widget.css')]
 })
 export class DisplayTextWidget extends WidgetComponent {
 

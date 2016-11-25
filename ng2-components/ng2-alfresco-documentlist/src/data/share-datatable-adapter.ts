@@ -54,7 +54,6 @@ export class ShareDataTableAdapter implements DataTableAdapter, PaginationProvid
     dataLoaded: DataLoadedEventEmitter;
 
     constructor(private documentListService: DocumentListService,
-                private basePath: string,
                 schema: DataColumn[]) {
         this.dataLoaded = new DataLoadedEventEmitter();
         this.rows = [];
@@ -146,7 +145,7 @@ export class ShareDataTableAdapter implements DataTableAdapter, PaginationProvid
                 let node = (<ShareDataRow> row).node;
 
                 if (node.entry.isFolder) {
-                    return `${this.basePath}/img/ft_ic_folder.svg`;
+                    return `/public/ng2-alfresco-documentlist/img/ft_ic_folder.svg`;
                 }
 
                 if (node.entry.isFile) {
@@ -163,13 +162,13 @@ export class ShareDataTableAdapter implements DataTableAdapter, PaginationProvid
                         if (mimeType) {
                             let icon = this.documentListService.getMimeTypeIcon(mimeType);
                             if (icon) {
-                                return `${this.basePath}/img/${icon}`;
+                                return `/public/ng2-alfresco-documentlist/img/${icon}`;
                             }
                         }
                     }
                 }
 
-                return `${this.basePath}/img/ft_ic_miscellaneous.svg`;
+                return `/public/ng2-alfresco-documentlist/img/ft_ic_miscellaneous.svg`;
             }
 
         }

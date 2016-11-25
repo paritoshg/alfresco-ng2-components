@@ -18,11 +18,12 @@
 import { Component, ElementRef, OnInit } from '@angular/core';
 import { TextFieldWidgetComponent } from './../textfield-widget.component';
 
+declare var require: any;
+
 @Component({
-    moduleId: module.id,
     selector: 'amount-widget',
-    templateUrl: './amount.widget.html',
-    styleUrls: ['./amount.widget.css']
+    template: require('./amount.widget.html'),
+    styles: [require('./amount.widget.css')]
 })
 export class AmountWidget extends TextFieldWidgetComponent implements OnInit {
 

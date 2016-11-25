@@ -18,9 +18,8 @@
 import { Component, ElementRef, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
-    moduleId: module.id,
     selector: 'diagram-mule-task',
-    templateUrl: './diagram-mule-task.component.html'
+    template: require('./diagram-mule-task.component.html')
 })
 export class DiagramMuleTaskComponent {
     @Input()

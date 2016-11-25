@@ -19,11 +19,12 @@ import { Component, OnInit } from '@angular/core';
 import { WidgetComponent } from './../widget.component';
 import { AlfrescoSettingsService, AlfrescoAuthenticationService } from 'ng2-alfresco-core';
 
+declare var require: any;
+
 @Component({
-    moduleId: module.id,
     selector: 'upload-widget',
-    templateUrl: './upload.widget.html',
-    styleUrls: ['./upload.widget.css']
+    template: require('./upload.widget.html'),
+    styles: [require('./upload.widget.css')]
 })
 export class UploadWidget extends WidgetComponent implements OnInit {
 

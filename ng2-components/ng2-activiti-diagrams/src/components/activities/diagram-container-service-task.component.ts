@@ -18,9 +18,8 @@
 import { Component, ElementRef, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
-    moduleId: module.id,
     selector: 'diagram-container-service-task',
-    templateUrl: './diagram-container-service-task.component.html'
+    template: require('./diagram-container-service-task.component.html')
 })
 export class DiagramContainerServiceTaskComponent {
     @Input()

@@ -19,10 +19,9 @@ import { Component, Input, OnInit } from '@angular/core';
 import { PaginationProvider } from './paginationProvider.interface';
 
 @Component({
-    moduleId: module.id,
     selector: 'alfresco-pagination',
-    templateUrl: './pagination.component.html',
-    styleUrls: ['./pagination.component.css']
+    template: require('./pagination.component.html'),
+    styles: [require('./pagination.component.css')]
 })
 export class PaginationComponent implements OnInit {
 

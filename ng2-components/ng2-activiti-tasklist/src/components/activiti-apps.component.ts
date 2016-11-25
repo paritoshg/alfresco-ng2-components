@@ -27,9 +27,8 @@ declare let componentHandler: any;
 
 @Component({
     selector: 'activiti-apps',
-    moduleId: module.id,
-    templateUrl: 'activiti-apps.component.html',
-    styleUrls: ['./activiti-apps.component.css', './activiti-apps-grid.component.css'],
+    template: require('./activiti-apps.component.html'),
+    styles: [require('./activiti-apps.component.css'), require('./activiti-apps-grid.component.css')],
     providers: [ActivitiTaskListService]
 })
 export class ActivitiApps implements OnInit {
@@ -69,7 +68,7 @@ export class ActivitiApps implements OnInit {
                 private activitiTaskList: ActivitiTaskListService) {
 
         if (translate) {
-            translate.addTranslationFolder('node_modules/ng2-activiti-tasklist/src');
+            translate.addTranslationFolder('public/ng2-activiti-tasklist');
         }
 
         this.apps$ = new Observable<AppDefinitionRepresentationModel>(observer =>  this.appsObserver = observer).share();

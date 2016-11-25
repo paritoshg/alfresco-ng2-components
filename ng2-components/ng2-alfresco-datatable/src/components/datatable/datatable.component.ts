@@ -37,10 +37,9 @@ import {
 declare var componentHandler;
 
 @Component({
-    moduleId: module.id,
     selector: 'alfresco-datatable',
-    styleUrls: ['./datatable.component.css'],
-    templateUrl: './datatable.component.html'
+    styles: [require('./datatable.component.css')],
+    template: require('./datatable.component.html')
 })
 export class DataTableComponent implements OnInit, AfterViewChecked {
 

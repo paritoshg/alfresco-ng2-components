@@ -20,11 +20,12 @@ import { WidgetComponent } from './../widget.component';
 import { FormService } from '../../../services/form.service';
 import { GroupModel } from './../core/group.model';
 
+declare var require: any;
+
 @Component({
-    moduleId: module.id,
     selector: 'functional-group-widget',
-    templateUrl: './functional-group.widget.html',
-    styleUrls: ['./functional-group.widget.css']
+    template: require('./functional-group.widget.html'),
+    styles: [require('./functional-group.widget.css')]
 })
 export class FunctionalGroupWidget extends WidgetComponent implements OnInit {
 

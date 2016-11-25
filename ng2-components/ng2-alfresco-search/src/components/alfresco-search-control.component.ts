@@ -23,10 +23,9 @@ import { SearchTermValidator } from './../forms/search-term-validator';
 import { Observable, Subject } from 'rxjs/Rx';
 
 @Component({
-    moduleId: module.id,
     selector: 'alfresco-search-control',
-    templateUrl: './alfresco-search-control.component.html',
-    styleUrls: ['./alfresco-search-control.component.css']
+    template: require('./alfresco-search-control.component.html'),
+    styles: [require('./alfresco-search-control.component.css')]
 })
 export class AlfrescoSearchControlComponent implements OnInit, OnDestroy {
 
@@ -103,7 +102,7 @@ export class AlfrescoSearchControlComponent implements OnInit, OnDestroy {
 
         this.setupFocusEventHandlers();
 
-        this.translate.addTranslationFolder('node_modules/ng2-alfresco-search/dist/src');
+        this.translate.addTranslationFolder('public/ng2-alfresco-search');
     }
 
     ngOnDestroy(): void {

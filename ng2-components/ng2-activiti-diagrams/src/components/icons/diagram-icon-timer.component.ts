@@ -19,9 +19,8 @@ import { Component, ElementRef, Input, Output, EventEmitter } from '@angular/cor
 import { DiagramColorService } from '../../services/diagram-color.service';
 
 @Component({
-    moduleId: module.id,
     selector: 'diagram-icon-timer',
-    templateUrl: './diagram-icon-timer.component.html'
+    template: require('./diagram-icon-timer.component.html')
 })
 export class DiagramIconTimerComponent {
     @Input()

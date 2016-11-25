@@ -19,11 +19,12 @@ import { Component, ElementRef, OnInit } from '@angular/core';
 import { WidgetComponent } from './../widget.component';
 import { DynamicTableModel, DynamicTableRow, DynamicTableColumn } from './dynamic-table.widget.model';
 
+declare var require: any;
+
 @Component({
-    moduleId: module.id,
     selector: 'dynamic-table-widget',
-    templateUrl: './dynamic-table.widget.html',
-    styleUrls: ['./dynamic-table.widget.css']
+    template: require('./dynamic-table.widget.html'),
+    styles: [require('./dynamic-table.widget.css')]
 })
 export class DynamicTableWidget extends WidgetComponent implements OnInit {
 

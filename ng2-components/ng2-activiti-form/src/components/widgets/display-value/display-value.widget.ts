@@ -22,11 +22,12 @@ import { FormService } from '../../../services/form.service';
 import { FormFieldOption } from './../core/form-field-option';
 import { DynamicTableColumn, DynamicTableRow } from './../dynamic-table/dynamic-table.widget.model';
 
+declare var require: any;
+
 @Component({
-    moduleId: module.id,
     selector: 'display-value-widget',
-    templateUrl: './display-value.widget.html',
-    styleUrls: ['./display-value.widget.css']
+    template: require('./display-value.widget.html'),
+    styles: [require('./display-value.widget.css')]
 })
 export class DisplayValueWidget extends WidgetComponent implements OnInit {
 

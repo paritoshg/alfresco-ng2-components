@@ -19,11 +19,12 @@ import { Component, OnInit } from '@angular/core';
 import { CellEditorComponent } from './../cell.editor';
 import { DynamicTableRow, DynamicTableColumn } from './../../dynamic-table.widget.model';
 
+declare var require: any;
+
 @Component({
-    moduleId: module.id,
     selector: 'alf-text-editor',
-    templateUrl: './text.editor.html',
-    styleUrls: ['./text.editor.css']
+    template: require('./text.editor.html'),
+    styles: [require('./text.editor.css')]
 })
 export class TextEditorComponent extends CellEditorComponent implements OnInit {
 

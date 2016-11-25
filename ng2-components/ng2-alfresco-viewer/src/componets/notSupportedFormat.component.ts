@@ -18,10 +18,9 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-    moduleId: module.id,
     selector: 'not-supported-format',
-    templateUrl: './notSupportedFormat.component.html',
-    styleUrls: ['./notSupportedFormat.component.css']
+    template: require('./notSupportedFormat.component.html'),
+    styles: [require('./notSupportedFormat.component.css')]
 })
 export class NotSupportedFormat {
 

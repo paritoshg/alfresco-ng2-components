@@ -19,9 +19,8 @@ import { Component, ElementRef, Input, Output, EventEmitter } from '@angular/cor
 import { DiagramColorService } from '../../services/diagram-color.service';
 
 @Component({
-    moduleId: module.id,
     selector: 'diagram-event-subprocess',
-    templateUrl: './diagram-event-subprocess.component.html'
+    template: require('./diagram-event-subprocess.component.html')
 })
 export class DiagramEventSubprocessComponent {
     @Input()

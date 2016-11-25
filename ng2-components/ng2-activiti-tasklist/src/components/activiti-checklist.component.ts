@@ -23,9 +23,8 @@ import { Observer, Observable } from 'rxjs/Rx';
 
 @Component({
     selector: 'activiti-checklist',
-    moduleId: module.id,
-    templateUrl: './activiti-checklist.component.html',
-    styleUrls: ['./activiti-checklist.component.css'],
+    template: require('./activiti-checklist.component.html'),
+    styles: [require('./activiti-checklist.component.css')],
     providers: [ActivitiTaskListService]
 })
 export class ActivitiChecklist implements OnInit, OnChanges {
@@ -55,7 +54,7 @@ export class ActivitiChecklist implements OnInit, OnChanges {
                 private activitiTaskList: ActivitiTaskListService) {
 
         if (translate) {
-            translate.addTranslationFolder('node_modules/ng2-activiti-tasklist/src');
+            translate.addTranslationFolder('public/ng2-activiti-tasklist');
         }
         this.task$ = new Observable<TaskDetailsModel>(observer =>  this.taskObserver = observer).share();
     }

@@ -23,10 +23,9 @@ import { Observer } from 'rxjs/Observer';
 import { Observable } from 'rxjs/Observable';
 
 @Component({
-    moduleId: module.id,
     selector: 'analytics-report-list',
-    templateUrl: './analytics-report-list.component.html',
-    styleUrls: ['./analytics-report-list.component.css']
+    template: require('./analytics-report-list.component.html'),
+    styles: [require('./analytics-report-list.component.css')]
 })
 export class AnalyticsReportListComponent implements  OnInit {
 

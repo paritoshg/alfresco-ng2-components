@@ -25,9 +25,8 @@ declare let componentHandler: any;
 
 @Component({
     selector: 'activiti-process-instance-header',
-    moduleId: module.id,
-    templateUrl: './activiti-process-instance-header.component.html',
-    styleUrls: ['./activiti-process-instance-header.component.css']
+    template: require('./activiti-process-instance-header.component.html'),
+    styles: [require('./activiti-process-instance-header.component.css')]
 })
 export class ActivitiProcessInstanceHeader {
 
@@ -44,7 +43,7 @@ export class ActivitiProcessInstanceHeader {
                 private activitiProcess: ActivitiProcessService) {
 
         if (translate) {
-            translate.addTranslationFolder('node_modules/ng2-activiti-tasklist/src');
+            translate.addTranslationFolder('public/ng2-activiti-processlist');
         }
     }
 

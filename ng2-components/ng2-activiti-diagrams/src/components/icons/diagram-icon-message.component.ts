@@ -19,9 +19,8 @@ import { Component, ElementRef, Input, Output, EventEmitter } from '@angular/cor
 import { DiagramColorService } from '../../services/diagram-color.service';
 
 @Component({
-    moduleId: module.id,
     selector: 'diagram-icon-message',
-    templateUrl: './diagram-icon-message.component.html'
+    template: require('./diagram-icon-message.component.html')
 })
 export class DiagramIconMessageComponent {
     @Input()

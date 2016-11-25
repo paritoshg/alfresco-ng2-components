@@ -19,11 +19,12 @@ import { Component } from '@angular/core';
 import { CellEditorComponent } from './../cell.editor';
 import { DynamicTableRow, DynamicTableColumn } from './../../dynamic-table.widget.model';
 
+declare var require: any;
+
 @Component({
-    moduleId: module.id,
     selector: 'alf-boolean-editor',
-    templateUrl: './boolean.editor.html',
-    styleUrls: ['./boolean.editor.css']
+    template: require('./boolean.editor.html'),
+    styles: [require('./boolean.editor.css')]
 })
 export class BooleanEditorComponent extends CellEditorComponent {
 

@@ -27,9 +27,8 @@ declare let dialogPolyfill: any;
 
 @Component({
     selector: 'activiti-process-instance-comments',
-    moduleId: module.id,
-    templateUrl: './activiti-comments.component.html',
-    styleUrls: ['./activiti-comments.component.css'],
+    template: require('./activiti-comments.component.html'),
+    styles: [require('./activiti-comments.component.css')],
     providers: [ActivitiProcessService]
 })
 export class ActivitiComments implements OnInit, OnChanges {
@@ -59,7 +58,7 @@ export class ActivitiComments implements OnInit, OnChanges {
                 private activitiProcess: ActivitiProcessService) {
 
         if (translate) {
-            translate.addTranslationFolder('node_modules/ng2-activiti-processlist/src');
+            translate.addTranslationFolder('public/ng2-activiti-processlist');
         }
 
         this.comment$ = new Observable<Comment>(observer =>  this.commentObserver = observer).share();

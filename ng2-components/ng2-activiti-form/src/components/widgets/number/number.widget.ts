@@ -18,11 +18,12 @@
 import { Component, ElementRef } from '@angular/core';
 import { TextFieldWidgetComponent } from './../textfield-widget.component';
 
+declare var require: any;
+
 @Component({
-    moduleId: module.id,
     selector: 'number-widget',
-    templateUrl: './number.widget.html',
-    styleUrls: ['./number.widget.css']
+    template: require('./number.widget.html'),
+    styles: [require('./number.widget.css')]
 })
 export class NumberWidget extends TextFieldWidgetComponent {
 

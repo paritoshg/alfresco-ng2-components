@@ -27,9 +27,8 @@ declare let dialogPolyfill: any;
 
 @Component({
     selector: 'activiti-start-process-instance',
-    moduleId: module.id,
-    templateUrl: './activiti-start-process.component.html',
-    styleUrls: ['./activiti-start-process.component.css']
+    template: require('./activiti-start-process.component.html'),
+    styles: [require('./activiti-start-process.component.css')]
 })
 export class ActivitiStartProcessButton implements OnInit, OnChanges {
 
@@ -57,7 +56,7 @@ export class ActivitiStartProcessButton implements OnInit, OnChanges {
                 private activitiProcess: ActivitiProcessService) {
 
         if (translate) {
-            translate.addTranslationFolder('node_modules/ng2-activiti-processlist/src');
+            translate.addTranslationFolder('public/ng2-activiti-processlist');
         }
     }
 

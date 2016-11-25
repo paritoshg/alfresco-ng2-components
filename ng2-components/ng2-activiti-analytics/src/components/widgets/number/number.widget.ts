@@ -20,10 +20,9 @@ import { WidgetComponent } from './../widget.component';
 import { FormGroup, Validators } from '@angular/forms';
 
 @Component({
-    moduleId: module.id,
     selector: 'number-widget',
-    templateUrl: './number.widget.html',
-    styleUrls: ['./number.widget.css']
+    template: require('./number.widget.html'),
+    styles: [require('./number.widget.css')]
 })
 export class NumberWidget extends WidgetComponent {
 

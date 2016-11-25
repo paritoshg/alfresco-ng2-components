@@ -25,9 +25,8 @@ declare let componentHandler: any;
 
 @Component({
     selector: 'activiti-tasklist',
-    moduleId: module.id,
-    templateUrl: './activiti-tasklist.component.html',
-    styleUrls: ['./activiti-tasklist.component.css']
+    template: require('./activiti-tasklist.component.html'),
+    styles: [require('./activiti-tasklist.component.css')]
 })
 export class ActivitiTaskList implements OnInit, OnChanges {
 
@@ -75,7 +74,7 @@ export class ActivitiTaskList implements OnInit, OnChanges {
     constructor(private translate: AlfrescoTranslationService,
                 public activiti: ActivitiTaskListService) {
         if (translate) {
-            translate.addTranslationFolder('node_modules/ng2-activiti-tasklist/src');
+            translate.addTranslationFolder('public/ng2-activiti-tasklist');
         }
     }
 

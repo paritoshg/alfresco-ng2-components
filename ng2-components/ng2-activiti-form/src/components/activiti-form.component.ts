@@ -72,11 +72,12 @@ import { WidgetVisibilityService }  from './../services/widget-visibility.servic
  *
  * @returns {ActivitiForm} .
  */
+declare var require: any;
+
 @Component({
-    moduleId: module.id,
     selector: 'activiti-form',
-    templateUrl: './activiti-form.component.html',
-    styleUrls: ['./activiti-form.component.css']
+    template: require('./activiti-form.component.html'),
+    styles: [require('./activiti-form.component.css')]
 })
 export class ActivitiForm implements OnInit, AfterViewChecked, OnChanges {
 

@@ -21,9 +21,8 @@ import { TaskDetailsModel } from '../models/task-details.model';
 
 @Component({
     selector: 'activiti-task-header',
-    moduleId: module.id,
-    templateUrl: './activiti-task-header.component.html',
-    styleUrls: ['./activiti-task-header.component.css']
+    template: require('./activiti-task-header.component.html'),
+    styles: [require('./activiti-task-header.component.css')]
 })
 export class ActivitiTaskHeader {
 
@@ -35,7 +34,7 @@ export class ActivitiTaskHeader {
 
     constructor(private translate: AlfrescoTranslationService) {
         if (translate) {
-            translate.addTranslationFolder('node_modules/ng2-activiti-tasklist/src');
+            translate.addTranslationFolder('public/ng2-activiti-tasklist');
         }
     }
 

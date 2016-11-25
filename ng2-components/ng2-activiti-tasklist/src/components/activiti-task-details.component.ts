@@ -25,9 +25,8 @@ import { TaskQueryRequestRepresentationModel } from '../models/filter.model';
 
 @Component({
     selector: 'activiti-task-details',
-    moduleId: module.id,
-    templateUrl: './activiti-task-details.component.html',
-    styleUrls: ['./activiti-task-details.component.css']
+    template: require('./activiti-task-details.component.html'),
+    styles: [require('./activiti-task-details.component.css')]
 })
 export class ActivitiTaskDetails implements OnInit, OnChanges {
 
@@ -96,7 +95,7 @@ export class ActivitiTaskDetails implements OnInit, OnChanges {
                 private activitiTaskList: ActivitiTaskListService) {
 
         if (translate) {
-            translate.addTranslationFolder('node_modules/ng2-activiti-tasklist/src');
+            translate.addTranslationFolder('public/ng2-activiti-tasklist');
         }
     }
 

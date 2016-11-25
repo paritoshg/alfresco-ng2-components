@@ -27,9 +27,8 @@ import { TagService } from '../services/tag.service';
  */
 
 @Component({
-    moduleId: module.id,
     selector: 'alfresco-tag-list',
-    templateUrl: './tag-list.component.html'
+    template: require('./tag-list.component.html')
 })
 export class TagList {
 

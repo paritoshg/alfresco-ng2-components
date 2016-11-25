@@ -27,9 +27,8 @@ declare let componentHandler: any;
 
 @Component({
     selector: 'activiti-process-instance-details',
-    moduleId: module.id,
-    templateUrl: './activiti-process-instance-details.component.html',
-    styleUrls: ['./activiti-process-instance-details.component.css']
+    template: require('./activiti-process-instance-details.component.html'),
+    styles: [require('./activiti-process-instance-details.component.css')]
 })
 export class ActivitiProcessInstanceDetails implements OnInit, OnChanges {
 
@@ -68,7 +67,7 @@ export class ActivitiProcessInstanceDetails implements OnInit, OnChanges {
                 private activitiProcess: ActivitiProcessService) {
 
         if (translate) {
-            translate.addTranslationFolder('node_modules/ng2-activiti-processlist/src');
+            translate.addTranslationFolder('public/ng2-activiti-processlist');
         }
     }
 

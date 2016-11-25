@@ -19,9 +19,8 @@ import { Component, ElementRef, Input, Output, EventEmitter } from '@angular/cor
 import { DiagramColorService } from '../../services/diagram-color.service';
 
 @Component({
-    moduleId: module.id,
     selector: 'diagram-user-task',
-    templateUrl: './diagram-user-task.component.html'
+    template: require('./diagram-user-task.component.html')
 })
 export class DiagramUserTaskComponent {
     @Input()

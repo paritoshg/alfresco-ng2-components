@@ -21,10 +21,9 @@ import { RenderingQueueServices } from '../services/rendering-queue.services';
 declare let PDFJS: any;
 
 @Component({
-    moduleId: module.id,
     selector: 'pdf-viewer',
-    templateUrl: './pdfViewer.component.html',
-    styleUrls: ['./pdfViewer.component.css', './pdfViewerHost.component.css'],
+    template: require('./pdfViewer.component.html'),
+    styles: [require('./pdfViewer.component.css'), require('./pdfViewerHost.component.css')],
     providers: [RenderingQueueServices]
 })
 export class PdfViewerComponent {

@@ -19,11 +19,12 @@ import { Component, AfterViewInit, OnInit } from '@angular/core';
 import { ContainerWidgetModel } from './container.widget.model';
 import { WidgetComponent } from './../widget.component';
 
+declare var require: any;
+
 @Component({
-    moduleId: module.id,
     selector: 'container-widget',
-    templateUrl: './container.widget.html',
-    styleUrls: ['./container.widget.css']
+    template: require('./container.widget.html'),
+    styles: [require('./container.widget.css')]
 })
 export class ContainerWidget extends WidgetComponent implements OnInit, AfterViewInit {
 

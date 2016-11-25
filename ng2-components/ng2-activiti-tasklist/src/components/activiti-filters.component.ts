@@ -26,9 +26,8 @@ declare let componentHandler: any;
 
 @Component({
     selector: 'activiti-filters',
-    moduleId: module.id,
-    templateUrl: './activiti-filters.component.html',
-    styleUrls: ['activiti-filters.component.css'],
+    template: require('./activiti-filters.component.html'),
+    styles: [require('./activiti-filters.component.css')],
     providers: [ActivitiTaskListService]
 })
 export class ActivitiFilters implements OnInit, OnChanges {
@@ -67,7 +66,7 @@ export class ActivitiFilters implements OnInit, OnChanges {
         this.filter$ = new Observable<FilterRepresentationModel>(observer => this.filterObserver = observer).share();
 
         if (translate) {
-            translate.addTranslationFolder('node_modules/ng2-activiti-tasklist/src');
+            translate.addTranslationFolder('public/ng2-activiti-tasklist');
         }
     }
 

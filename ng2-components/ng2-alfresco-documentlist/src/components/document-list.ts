@@ -44,10 +44,9 @@ import {
 declare var componentHandler;
 
 @Component({
-    moduleId: module.id,
     selector: 'alfresco-document-list',
-    styleUrls: ['./document-list.css'],
-    templateUrl: './document-list.html'
+    styles: [require('./document-list.css')],
+    template: require('./document-list.html')
 })
 export class DocumentList implements OnInit, AfterViewChecked, AfterContentInit {
 
@@ -57,10 +56,8 @@ export class DocumentList implements OnInit, AfterViewChecked, AfterContentInit 
 
     DEFAULT_ROOT_FOLDER: string = '/';
 
-    baseComponentPath = module.id.replace('/components/document-list.js', '');
-
     @Input()
-    fallbackThubnail: string = this.baseComponentPath + '/img/ft_ic_miscellaneous.svg';
+    fallbackThubnail: string = 'public/ng2-alfresco-documentlist/img/ft_ic_miscellaneous.svg';
 
     @Input()
     navigate: boolean = true;
@@ -140,10 +137,10 @@ export class DocumentList implements OnInit, AfterViewChecked, AfterContentInit 
         private ngZone: NgZone,
         private translate: AlfrescoTranslationService) {
 
-        this.data = new ShareDataTableAdapter(this.documentListService, this.baseComponentPath, []);
+        this.data = new ShareDataTableAdapter(this.documentListService, []);
 
         if (translate) {
-            translate.addTranslationFolder('node_modules/ng2-alfresco-documentlist/dist/src');
+            translate.addTranslationFolder('public/ng2-alfresco-documentlist');
         }
     }
 

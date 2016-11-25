@@ -23,9 +23,8 @@ import { Observer, Observable } from 'rxjs/Rx';
 
 @Component({
     selector: 'activiti-comments',
-    moduleId: module.id,
-    templateUrl: './activiti-comments.component.html',
-    styleUrls: ['./activiti-comments.component.css'],
+    template: require('./activiti-comments.component.html'),
+    styles: [require('./activiti-comments.component.css')],
     providers: [ActivitiTaskListService]
 })
 export class ActivitiComments implements OnInit, OnChanges {
@@ -58,7 +57,7 @@ export class ActivitiComments implements OnInit, OnChanges {
                 private activitiTaskList: ActivitiTaskListService) {
 
         if (translate) {
-            translate.addTranslationFolder('node_modules/ng2-activiti-tasklist/src');
+            translate.addTranslationFolder('public/ng2-activiti-tasklist');
         }
 
         this.comment$ = new Observable<Comment>(observer =>  this.commentObserver = observer).share();

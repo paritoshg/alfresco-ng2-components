@@ -23,9 +23,8 @@ import { ActivitiPeopleService } from '../services/activiti-people.service';
 
 @Component({
     selector: 'activiti-people',
-    moduleId: module.id,
-    templateUrl: './activiti-people.component.html',
-    styleUrls: ['./activiti-people.component.css']
+    template: require('./activiti-people.component.html'),
+    styles: [require('./activiti-people.component.css')]
 })
 export class ActivitiPeople {
 
@@ -52,7 +51,7 @@ export class ActivitiPeople {
     constructor(private translate: AlfrescoTranslationService,
                 private peopleService: ActivitiPeopleService) {
         if (translate) {
-            translate.addTranslationFolder('node_modules/ng2-activiti-tasklist/src');
+            translate.addTranslationFolder('public/ng2-activiti-tasklist');
         }
         this.peopleSearch$ = new Observable<User[]>(observer => this.peopleSearchObserver = observer).share();
     }

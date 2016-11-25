@@ -18,11 +18,12 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { DynamicTableModel, DynamicTableRow, DynamicTableColumn, DynamicRowValidationSummary } from './../dynamic-table.widget.model';
 
+declare var require: any;
+
 @Component({
-    moduleId: module.id,
     selector: 'row-editor',
-    templateUrl: './row.editor.html',
-    styleUrls: ['./row.editor.css']
+    template: require('./row.editor.html'),
+    styles: [require('./row.editor.css')]
 })
 export class RowEditorComponent {
 

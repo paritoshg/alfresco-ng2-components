@@ -18,11 +18,12 @@
 import { Component, ElementRef, OnInit, AfterViewChecked } from '@angular/core';
 import { TextFieldWidgetComponent } from './../textfield-widget.component';
 
+declare var require: any;
+
 @Component({
-    moduleId: module.id,
     selector: 'date-widget',
-    templateUrl: './date.widget.html',
-    styleUrls: ['./date.widget.css']
+    template: require('./date.widget.html'),
+    styles: [require('./date.widget.css')]
 })
 export class DateWidget extends TextFieldWidgetComponent implements OnInit, AfterViewChecked {
 

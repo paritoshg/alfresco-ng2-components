@@ -18,11 +18,12 @@
 import { Component, OnInit, ElementRef } from '@angular/core';
 import { CellEditorComponent } from './../cell.editor';
 
+declare var require: any;
+
 @Component({
-    moduleId: module.id,
     selector: 'alf-date-editor',
-    templateUrl: './date.editor.html',
-    styleUrls: ['./date.editor.css']
+    template: require('./date.editor.html'),
+    styles: [require('./date.editor.css')]
 })
 export class DateEditorComponent extends CellEditorComponent implements OnInit {
 

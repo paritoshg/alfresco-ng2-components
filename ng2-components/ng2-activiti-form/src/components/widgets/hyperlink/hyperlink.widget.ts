@@ -18,11 +18,12 @@
 import { Component, OnInit } from '@angular/core';
 import { WidgetComponent } from './../widget.component';
 
+declare var require: any;
+
 @Component({
-    moduleId: module.id,
     selector: 'hyperlink-widget',
-    templateUrl: './hyperlink.widget.html',
-    styleUrls: ['./hyperlink.widget.css']
+    template: require('./hyperlink.widget.html'),
+    styles: [require('./hyperlink.widget.css')]
 })
 export class HyperlinkWidget extends WidgetComponent implements OnInit {
 

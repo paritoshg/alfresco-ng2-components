@@ -1,14 +1,20 @@
 import { NgModule } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { CoreModule } from 'ng2-alfresco-core';
 
 import { FormService } from './services/form.service';
 import { FauxFormsService } from './services/in-memory.service';
 import { RestService } from './services/rest.service';
+import { TranslateModule, TranslateService, TranslateLoader } from 'ng2-translate/ng2-translate';
+import {
+    AlfrescoTranslationService,
+    AlfrescoAuthenticationService,
+    AlfrescoSettingsService,
+    AlfrescoApiService
+} from 'ng2-alfresco-core';
 
 import {
     DynamicFormComponent,
@@ -16,15 +22,14 @@ import {
 } from './components';
 
 @NgModule({
-    bootstrap: [ ],
-    declarations: [ AlfrescoLoginComponent,DynamicFormComponent ],
+    bootstrap: [ AlfrescoLoginComponent ],
+    declarations: [AlfrescoLoginComponent, DynamicFormComponent ],
     imports: [
-        BrowserModule,
         HttpModule,
-        CoreModule,
+        BrowserModule,
         InMemoryWebApiModule.forRoot(FauxFormsService),
-        ReactiveFormsModule
+        ReactiveFormsModule, FormsModule, TranslateModule
     ],
-    providers: [ FormService, RestService ]
+    providers: [AlfrescoApiService,AlfrescoAuthenticationService, AlfrescoSettingsService ]
 })
 export class AppModule {}

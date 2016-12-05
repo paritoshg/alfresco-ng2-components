@@ -18,51 +18,12 @@
 import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import {
-    AlfrescoTranslationService,
     AlfrescoAuthenticationService,
     AlfrescoSettingsService
 } from 'ng2-alfresco-core';
 import { FormSubmitEvent } from '../models/form-submit-event.model';
 
 declare let componentHandler: any;
-
-// const templatemy = './alfresco-login.component.html';
-// const loader = 2;
-//
-// let mariosLoaderUrl = function (path) {
-//     console.log('my path' + path)
-//     if (loader === 1) {
-//         return templatemy;
-//     } else {
-//         return null;
-//     }
-// };
-//
-// let mariosLoaderTemplate = function (path) {
-//     console.log('my path' + path)
-//     if (loader === 1) {
-//         return null;
-//     } else {
-//         return require(templatemy);
-//     }
-// };
-//
-// let mariosLoaderStyleUrl = function (path) {
-//     console.log('my path' + path)
-//     if (loader === 1) {
-//         return './alfresco-login.component.css';
-//     } else {
-//         return '';
-//     }
-// };
-// let mariosLoaderStyle = function (path) {
-//     console.log('my path' + path)
-//     if (loader === 1) {
-//         return '';
-//     } else {
-//         return require('./alfresco-login.component.css');
-//     }
-// };
 
 @Component({
     selector: 'alfresco-login',
@@ -115,10 +76,8 @@ export class AlfrescoLoginComponent implements OnInit {
      */
     constructor(private _fb: FormBuilder,
                 public authService: AlfrescoAuthenticationService,
-                public settingsService: AlfrescoSettingsService,
-                private translate: AlfrescoTranslationService) {
+                public settingsService: AlfrescoSettingsService) {
 
-        translate.addTranslationFolder('public/ng2-alfresco-login');
 
         this.initFormError();
         this.initFormFieldsMessages();
@@ -210,7 +169,6 @@ export class AlfrescoLoginComponent implements OnInit {
             this.errorMsg = 'LOGIN.MESSAGES.LOGIN-ERROR-PROVIDERS';
             this.enableError();
             let messageProviders: any;
-            messageProviders = this.translate.get(this.errorMsg);
             this.onError.emit(messageProviders.value);
             return false;
         }

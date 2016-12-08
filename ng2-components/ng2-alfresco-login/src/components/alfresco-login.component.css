@@ -194,3 +194,7 @@
 .alfresco-login__password .icon-inline {
     left: 90%;
 }
+
+.login-content{
+    background-image: url('../assets/images/background.svg');
+}

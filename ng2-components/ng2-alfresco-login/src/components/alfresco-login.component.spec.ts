@@ -20,13 +20,14 @@ import { DebugElement }    from '@angular/core';
 import {
     AlfrescoAuthenticationService,
     AlfrescoSettingsService,
-    AlfrescoApiService,
     CoreModule
 } from 'ng2-alfresco-core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AlfrescoTranslationService } from 'ng2-alfresco-core';
 import { AlfrescoLoginComponent } from './alfresco-login.component';
 import { AuthenticationMock } from './../assets/authentication.service.mock';
 import { TranslationMock } from './../assets/translation.service.mock';
+import { TranslateModule, TranslateService, TranslateLoader } from 'ng2-translate/ng2-translate';
 
 describe('AlfrescoLogin', () => {
     let component: any;
@@ -38,14 +39,14 @@ describe('AlfrescoLogin', () => {
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({
-            imports: [
-                CoreModule
+            imports: [ReactiveFormsModule, FormsModule, TranslateModule
             ],
             declarations: [AlfrescoLoginComponent],
             providers: [
+                CoreModule,
+                TranslateService,
+                TranslateLoader,
                 AlfrescoSettingsService,
-                AlfrescoAuthenticationService,
-                AlfrescoApiService,
                 {provide: AlfrescoAuthenticationService, useClass: AuthenticationMock},
                 {provide: AlfrescoTranslationService, useClass: TranslationMock}
             ]
@@ -372,4 +373,5 @@ describe('AlfrescoLogin', () => {
         expect(element.querySelector('#login-error').innerText).toEqual('LOGIN.MESSAGES.LOGIN-ERROR-PROVIDERS');
         expect(component.onError.emit).toHaveBeenCalledWith('LOGIN.MESSAGES.LOGIN-ERROR-PROVIDERS');
     });
+
 });

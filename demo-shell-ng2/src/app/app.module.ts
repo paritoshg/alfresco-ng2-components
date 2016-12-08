@@ -16,7 +16,6 @@ import { UserInfoComponentModule } from 'ng2-alfresco-userinfo';
 import { AnalyticsModule } from 'ng2-activiti-analytics';
 import { AppComponent } from './app.component';
 import { routing } from './app.routes';
-import { CustomEditorsModule } from './components/activiti/custom-editor/custom-editor.component';
 
 import {
     DataTableDemoComponent,
@@ -50,8 +49,7 @@ import {
         ActivitiTaskListModule,
         ActivitiProcessListModule,
         UserInfoComponentModule,
-        AnalyticsModule,
-        CustomEditorsModule
+        AnalyticsModule
     ],
     declarations: [
         AppComponent,

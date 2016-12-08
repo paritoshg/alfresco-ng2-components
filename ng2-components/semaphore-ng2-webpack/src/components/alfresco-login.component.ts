@@ -18,6 +18,7 @@
 import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import {
+    AlfrescoTranslationService,
     AlfrescoAuthenticationService,
     AlfrescoSettingsService
 } from 'ng2-alfresco-core';
@@ -76,12 +77,15 @@ export class AlfrescoLoginComponent implements OnInit {
      */
     constructor(private _fb: FormBuilder,
                 public authService: AlfrescoAuthenticationService,
-                public settingsService: AlfrescoSettingsService) {
+                public settingsService: AlfrescoSettingsService,
+                private translate: AlfrescoTranslationService) {
 
+        translate.addTranslationFolder('public/ng2-alfresco-login');
 
         this.initFormError();
         this.initFormFieldsMessages();
     }
+
 
     ngOnInit() {
         if (this.hasCustomFiledsValidation()) {

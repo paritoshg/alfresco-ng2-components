@@ -29,6 +29,8 @@ import {
 import { WidgetVisibilityModel } from '../models/widget-visibility.model';
 import { TaskProcessVariableModel } from '../models/task-process-variable.model';
 
+let moment: any;
+
 @Injectable()
 export class WidgetVisibilityService {
 
@@ -248,7 +250,7 @@ export class WidgetVisibilityService {
 
     private getRequestOptions(): RequestOptions {
         let headers = this.getHeaders();
-        return new RequestOptions({ headers: headers });
+        return new RequestOptions({headers: headers});
     }
 
     private handleError(error: Response) {

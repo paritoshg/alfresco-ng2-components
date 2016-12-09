@@ -21,6 +21,8 @@ import { ActivitiTaskListService } from './../services/activiti-tasklist.service
 import { Comment } from '../models/comment.model';
 import { Observer, Observable } from 'rxjs/Rx';
 
+let dialogPolyfill: any;
+
 @Component({
     selector: 'activiti-comments',
     moduleId: module.id,

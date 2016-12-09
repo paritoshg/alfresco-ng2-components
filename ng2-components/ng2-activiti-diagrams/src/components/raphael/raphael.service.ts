@@ -16,6 +16,7 @@
  */
 
 import { Injectable } from '@angular/core';
+import { Raphael } from 'raphael';
 
 @Injectable()
 export class RaphaelService {

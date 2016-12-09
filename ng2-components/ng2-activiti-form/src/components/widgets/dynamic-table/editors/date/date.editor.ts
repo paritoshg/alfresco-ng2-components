@@ -18,6 +18,9 @@
 import { Component, Input, OnInit, ElementRef } from '@angular/core';
 import { DynamicTableModel, DynamicTableRow, DynamicTableColumn } from './../../dynamic-table.widget.model';
 
+let moment: any;
+let mdDateTimePicker: any;
+
 @Component({
     moduleId: module.id,
     selector: 'alf-date-editor',

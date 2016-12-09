@@ -23,6 +23,8 @@ import { FormFieldOption } from './../core/form-field-option';
 import { DynamicTableColumn, DynamicTableRow } from './../dynamic-table/dynamic-table.widget.model';
 import { WidgetVisibilityService } from '../../../services/widget-visibility.service';
 
+let moment: any;
+
 @Component({
     moduleId: module.id,
     selector: 'display-value-widget',
@@ -125,7 +127,7 @@ export class DisplayValueWidget extends WidgetComponent implements OnInit, After
                                 this.visibleColumns = this.columns.filter(col => col.visible);
                             }
                             if (json.value) {
-                                this.rows = json.value.map(obj => <DynamicTableRow> { selected: false, value: obj });
+                                this.rows = json.value.map(obj => <DynamicTableRow> {selected: false, value: obj});
                             }
                             break;
                         default:

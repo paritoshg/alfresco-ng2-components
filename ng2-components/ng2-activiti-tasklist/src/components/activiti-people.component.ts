@@ -21,6 +21,8 @@ import { User } from '../models/user.model';
 import { Observer, Observable } from 'rxjs/Rx';
 import { ActivitiPeopleService } from '../services/activiti-people.service';
 
+let dialogPolyfill: any;
+
 @Component({
     selector: 'activiti-people',
     moduleId: module.id,

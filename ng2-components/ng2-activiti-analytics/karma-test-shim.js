@@ -29,7 +29,7 @@ var paths = {
 };
 
 var map = {
-    'app': 'base/dist',
+    'app': 'base/src',
     // angular bundles
     '@angular/core': 'npm:@angular/core/bundles/core.umd.js',
     '@angular/common': 'npm:@angular/common/bundles/common.umd.js',
@@ -57,9 +57,9 @@ var map = {
     'moment' : 'npm:moment/min/moment.min.js',
 
     'alfresco-js-api': 'npm:alfresco-js-api/dist',
-    'ng2-activiti-analytics': 'npm:ng2-activiti-analytics/dist',
-    'ng2-activiti-diagrams': 'npm:ng2-activiti-diagrams/dist',
-    'ng2-alfresco-core': 'npm:ng2-alfresco-core/dist'
+    'ng2-activiti-analytics': 'npm:ng2-activiti-analytics',
+    'ng2-activiti-diagrams': 'npm:ng2-activiti-diagrams',
+    'ng2-alfresco-core': 'npm:ng2-alfresco-core'
 };
 
 var packages = {
@@ -71,9 +71,9 @@ var packages = {
     'moment': { defaultExtension: 'js' },
 
     'alfresco-js-api': { main: './alfresco-js-api.js', defaultExtension: 'js'},
-    'ng2-activiti-analytics': { main: './index.js', defaultExtension: 'js'},
-    'ng2-activiti-diagrams': { main: './index.js', defaultExtension: 'js'},
-    'ng2-alfresco-core': { main: './index.js', defaultExtension: 'js'}
+    'ng2-activiti-analytics': { defaultExtension: 'js'},
+    'ng2-activiti-diagrams': { defaultExtension: 'js'},
+    'ng2-alfresco-core': { defaultExtension: 'js'}
 };
 
 var config = {

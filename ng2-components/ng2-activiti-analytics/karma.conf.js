@@ -24,8 +24,8 @@ module.exports = function (config) {
       'node_modules/zone.js/dist/fake-async-test.js',
 
       // RxJs
-      {pattern: 'node_modules/rxjs/**/*.js', included: false, watched: false},
-      {pattern: 'node_modules/rxjs/**/*.js.map', included: false, watched: false},
+      { pattern: 'node_modules/rxjs/**/*.js', included: false, watched: false },
+      { pattern: 'node_modules/rxjs/**/*.js.map', included: false, watched: false },
 
       // Paths loaded via module imports:
       // Angular itself
@@ -46,8 +46,13 @@ module.exports = function (config) {
       {pattern: 'src/**/*.css', included: true, served: true, watched: true},
 
       // ng2-components
-      { pattern: 'node_modules/ng2-alfresco-core/**/*.js', included: false, served: true, watched: false },
-      { pattern: 'node_modules/ng2-activiti-diagrams/**/*.js', included: false, served: true, watched: false },
+      { pattern: 'node_modules/ng2-alfresco-core/src/**/*.js', included: false, served: true, watched: false },
+      { pattern: 'node_modules/ng2-alfresco-core/index.js', included: false, served: true, watched: false },
+
+      { pattern: 'node_modules/ng2-activiti-diagrams/src/**/*.js', included: false, served: true, watched: false },
+      { pattern: 'node_modules/ng2-activiti-diagrams/index.js', included: false, served: true, watched: false },
+
+
       { pattern: 'node_modules/ng2-charts/**/*.js', included: false, served: true, watched: false },
       { pattern: 'node_modules/md-date-time-picker/**/*.js', included: false, served: true, watched: false },
       { pattern: 'node_modules/moment/**/*.js', included: false, served: true, watched: false },

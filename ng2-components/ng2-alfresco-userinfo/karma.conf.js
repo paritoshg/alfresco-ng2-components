@@ -44,7 +44,9 @@ module.exports = function (config) {
       {pattern: 'src/**/*.css', included: true, served: true, watched: true},
 
       // ng2-components
-      { pattern: 'node_modules/ng2-alfresco-core/**/*.js', included: false, served: true, watched: false },
+      { pattern: 'node_modules/ng2-alfresco-core/src/**/*.js', included: false, served: true, watched: false },
+      { pattern: 'node_modules/ng2-alfresco-core/index.js', included: false, served: true, watched: false },
+
       // Fake files
       {pattern: 'src/assets/ecmImg.gif', included: false, watched: true, served: true},
       {pattern: 'src/assets/bpmImg.gif', included: false, watched: true, served: true},

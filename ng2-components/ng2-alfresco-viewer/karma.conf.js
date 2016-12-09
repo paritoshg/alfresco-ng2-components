@@ -44,7 +44,8 @@ module.exports = function (config) {
       {pattern: 'src/**/*.css', included: true, served: true, watched: true},
 
       // ng2-components
-      { pattern: 'node_modules/ng2-alfresco-core/**/*.js', included: false, served: true, watched: false },
+      { pattern: 'node_modules/ng2-alfresco-core/src/**/*.js', included: false, served: true, watched: false },
+      { pattern: 'node_modules/ng2-alfresco-core/index.js', included: false, served: true, watched: false },
 
       // pdf-js
       { pattern: 'node_modules/pdfjs-dist/build/pdf.js', included: true, watched: false },

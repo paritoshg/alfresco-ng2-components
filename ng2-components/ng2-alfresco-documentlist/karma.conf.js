@@ -45,8 +45,11 @@ module.exports = function (config) {
 
 
       // ng2-components
-      { pattern: 'node_modules/ng2-alfresco-core/**/*.js', included: false, served: true, watched: false },
-      { pattern: 'node_modules/ng2-alfresco-datatable/**/*.js', included: false, served: true, watched: false },
+      { pattern: 'node_modules/ng2-alfresco-core/src/**/*.js', included: false, served: true, watched: false },
+      { pattern: 'node_modules/ng2-alfresco-core/index.js', included: false, served: true, watched: false },
+
+      { pattern: 'node_modules/ng2-alfresco-datatable/src/**/*.js', included: false, served: true, watched: false },
+      { pattern: 'node_modules/ng2-alfresco-datatable/index.js', included: false, served: true, watched: false },
 
       // paths to support debugging with source maps in dev tools
       {pattern: 'src/**/*.ts', included: false, watched: false},

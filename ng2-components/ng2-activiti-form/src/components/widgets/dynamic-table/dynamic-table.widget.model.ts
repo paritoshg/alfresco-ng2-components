@@ -18,8 +18,7 @@
 import { FormWidgetModel } from './../core/form-widget.model';
 import { FormModel } from './../core/form.model';
 import { FormFieldModel } from './../core/form-field.model';
-
-let moment: any;
+import * as moment from 'moment';
 
 export class DynamicTableModel extends FormWidgetModel {
 

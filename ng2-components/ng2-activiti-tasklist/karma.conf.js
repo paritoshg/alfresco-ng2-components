@@ -33,6 +33,8 @@ module.exports = function (config) {
       {pattern: 'node_modules/@angular/**/*.js.map', included: false, watched: false},
 
       'node_modules/alfresco-js-api/dist/alfresco-js-api.js',
+      'node_modules/moment/min/moment.min.js',
+
       {pattern: 'node_modules/ng2-translate/**/*.js', included: false, watched: false},
 
       'karma-test-shim.js',
@@ -43,13 +45,13 @@ module.exports = function (config) {
       {pattern: 'src/**/*.css', included: true, served: true, watched: true},
 
       // ng2-components
-      { pattern: 'node_modules/ng2-activiti-form/src/**/*.js', included: false, served: true, watched: false },
+      { pattern: 'node_modules/ng2-activiti-form/src/**/*.*', included: false, served: true, watched: false },
       { pattern: 'node_modules/ng2-activiti-form/index.js', included: false, served: true, watched: false },
 
       { pattern: 'node_modules/ng2-alfresco-core/src/**/*.js', included: false, served: true, watched: false },
       { pattern: 'node_modules/ng2-alfresco-core/index.js', included: false, served: true, watched: false },
 
-      { pattern: 'node_modules/ng2-alfresco-datatable/src/**/*.js', included: false, served: true, watched: false },
+      { pattern: 'node_modules/ng2-alfresco-datatable/src/**/*.*', included: false, served: true, watched: false },
       { pattern: 'node_modules/ng2-alfresco-datatable/index.js', included: false, served: true, watched: false },
 
       // paths to support debugging with source maps in dev tools

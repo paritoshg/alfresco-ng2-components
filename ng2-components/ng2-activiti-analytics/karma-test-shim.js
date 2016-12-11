@@ -5,7 +5,7 @@ jasmine.DEFAULT_TIMEOUT_INTERVAL = 1000;
 
 __karma__.loaded = function() {};
 
-var builtPath = '/base/dist/';
+var builtPath = '/base/src/';
 
 function isJsFile(path) {
     return path.slice(-3) == '.js';
@@ -57,7 +57,6 @@ var map = {
     'moment' : 'npm:moment/min/moment.min.js',
 
     'alfresco-js-api': 'npm:alfresco-js-api/dist',
-    'ng2-activiti-analytics': 'npm:ng2-activiti-analytics',
     'ng2-activiti-diagrams': 'npm:ng2-activiti-diagrams',
     'ng2-alfresco-core': 'npm:ng2-alfresco-core'
 };
@@ -71,9 +70,8 @@ var packages = {
     'moment': { defaultExtension: 'js' },
 
     'alfresco-js-api': { main: './alfresco-js-api.js', defaultExtension: 'js'},
-    'ng2-activiti-analytics': { defaultExtension: 'js'},
-    'ng2-activiti-diagrams': { defaultExtension: 'js'},
-    'ng2-alfresco-core': { defaultExtension: 'js'}
+    'ng2-activiti-diagrams': { main: './index.js', defaultExtension: 'js'},
+    'ng2-alfresco-core': { main: './index.js', defaultExtension: 'js'}
 };
 
 var config = {

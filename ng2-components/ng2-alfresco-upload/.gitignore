@@ -16,3 +16,4 @@ index.js.map
 *.tgz
 /package/
 /bundles/
+index.d.ts

@@ -17,8 +17,7 @@
 
 import { FormFieldModel } from './form-field.model';
 import { FormFieldTypes } from './form-field-types';
-
-let moment: any;
+import * as moment from 'moment';
 
 export interface FormFieldValidator {
 

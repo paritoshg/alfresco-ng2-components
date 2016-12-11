@@ -18,8 +18,9 @@
 import { Directive, OnInit, ElementRef, Input, Output, EventEmitter } from '@angular/core';
 import { RaphaelBase } from './raphael-base';
 import { RaphaelService } from './raphael.service';
-import { Raphael } from 'raphael';
-import { Polyline } from '../../assets/polyline';
+import { Polyline } from './polyline';
+
+declare let Raphael: any;
 
 @Directive({selector: 'raphael-flow-arrow'})
 export class RaphaelFlowArrowDirective extends RaphaelBase implements OnInit {
@@ -41,7 +42,7 @@ export class RaphaelFlowArrowDirective extends RaphaelBase implements OnInit {
     }
 
     ngOnInit() {
-        console.log(this.elementRef);
+
         this.draw(this.flow);
     }
 

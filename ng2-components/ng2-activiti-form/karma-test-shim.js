@@ -1,4 +1,4 @@
-x// Tun on full stack traces in errors to help debugging
+// Tun on full stack traces in errors to help debugging
 Error.stackTraceLimit = Infinity;
 
 jasmine.DEFAULT_TIMEOUT_INTERVAL = 1000;
@@ -52,6 +52,8 @@ var map = {
     // other libraries
     'rxjs': 'npm:rxjs',
     'ng2-translate': 'npm:ng2-translate',
+    'md-date-time-picker' : 'npm:md-date-time-picker',
+    'moment' : 'npm:moment/min/moment.min.js',
 
     'alfresco-js-api': 'npm:alfresco-js-api/dist',
     'ng2-alfresco-core': 'npm:ng2-alfresco-core'
@@ -61,6 +63,8 @@ var packages = {
     'app': { main: 'main.js',  defaultExtension: 'js' },
     'rxjs': {  defaultExtension: 'js' },
     'ng2-translate': { defaultExtension: 'js' },
+    'md-date-time-picker': { defaultExtension: 'js' },
+    'moment': { defaultExtension: 'js' },
 
     'alfresco-js-api': { main: './alfresco-js-api.js', defaultExtension: 'js'},
     'ng2-alfresco-core': { main: './index.js', defaultExtension: 'js'}

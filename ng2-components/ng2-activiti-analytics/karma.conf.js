@@ -46,12 +46,11 @@ module.exports = function (config) {
       {pattern: 'src/**/*.css', included: true, served: true, watched: true},
 
       // ng2-components
-      { pattern: 'node_modules/ng2-alfresco-core/src/**/*.js', included: false, served: true, watched: false },
+      { pattern: 'node_modules/ng2-alfresco-core/src/**/*.*', included: false, served: true, watched: false },
       { pattern: 'node_modules/ng2-alfresco-core/index.js', included: false, served: true, watched: false },
 
-      { pattern: 'node_modules/ng2-activiti-diagrams/src/**/*.js', included: false, served: true, watched: false },
+      { pattern: 'node_modules/ng2-activiti-diagrams/src/**/*.*', included: false, served: true, watched: false },
       { pattern: 'node_modules/ng2-activiti-diagrams/index.js', included: false, served: true, watched: false },
-
 
       { pattern: 'node_modules/ng2-charts/**/*.js', included: false, served: true, watched: false },
       { pattern: 'node_modules/md-date-time-picker/**/*.js', included: false, served: true, watched: false },
@@ -59,7 +58,8 @@ module.exports = function (config) {
 
       // paths to support debugging with source maps in dev tools
       {pattern: 'src/**/*.ts', included: false, watched: false},
-      {pattern: 'src/**/*.js.map', included: false, watched: false}
+      {pattern: 'src/**/*.js.map', included: false, watched: false},
+      {pattern: 'src/**/*.json', included: false, watched: false}
     ],
 
     exclude: [

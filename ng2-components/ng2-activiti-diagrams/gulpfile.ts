@@ -243,8 +243,7 @@ gulp.task('build.bundles.app', (done) => {
             'ng2-alfresco-viewer': 'node_modules/ng2-alfresco-viewer/',
             'ng2-alfresco-webscript': 'node_modules/ng2-alfresco-webscript/',
             'ng2-charts' : 'node_modules/ng2-charts',
-            'raphael':'node_modules/raphael/raphael',
-            'polyline':'../assets/Polyline'
+            'raphael':'node_modules/raphael/raphael'
         },
         paths: {
             '*': '*.js'

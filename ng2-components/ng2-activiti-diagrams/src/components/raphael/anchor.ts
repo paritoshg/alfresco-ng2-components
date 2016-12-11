@@ -15,23 +15,27 @@
  * limitations under the License.
  */
 
-import { Component, ElementRef, Input, Output, EventEmitter } from '@angular/core';
+export class Anchor {
 
-@Component({
-    moduleId: module.id,
-    selector: 'diagram-sequence-flow',
-    templateUrl: './diagram-sequence-flow.component.html'
-})
-export class DiagramSequenceFlowComponent {
-    @Input()
-    flow: any;
+    public static ANCHOR_TYPE: any = {
+        main: 'main',
+        middle: 'middle',
+        first: 'first',
+        last: 'last'
+    };
 
-    @Output()
-    onError = new EventEmitter();
+    uuid: any = null;
+    x: any = 0;
+    y: any = 0;
+    isFirst: any = false;
+    isLast: any = false;
+    typeIndex: any = 0;
+    type: any = Anchor.ANCHOR_TYPE.main;
 
-    constructor(public elementRef: ElementRef) {}
-
-    ngOnInit() {
-
+    constructor(uuid: any, type: any, x: any, y: any) {
+        this.uuid = uuid;
+        this.x = x;
+        this.y = y;
+        this.type = (type === Anchor.ANCHOR_TYPE.middle) ? Anchor.ANCHOR_TYPE.middle : Anchor.ANCHOR_TYPE.main;
     }
 }

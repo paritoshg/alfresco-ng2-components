@@ -14,27 +14,24 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-export class Anchor {
 
-    public static ANCHOR_TYPE: any = {
-        main: 'main',
-        middle: 'middle',
-        first: 'first',
-        last: 'last'
-    };
+import { Observable } from 'rxjs/Rx';
+import { EventEmitter } from '@angular/core';
 
-    uuid: any = null;
-    x: any = 0;
-    y: any = 0;
-    isFirst: any = false;
-    isLast: any = false;
-    typeIndex: any = 0;
-    type: any = Anchor.ANCHOR_TYPE.main;
+export interface LangChangeEvent {
+    lang: string;
+    translations: any;
+}
 
-    constructor(uuid: any, type: any, x: any, y: any) {
-        this.uuid = uuid;
-        this.x = x;
-        this.y = y;
-        this.type = (type === Anchor.ANCHOR_TYPE.middle) ? Anchor.ANCHOR_TYPE.middle : Anchor.ANCHOR_TYPE.main;
+export class TranslationMock {
+
+    public onLangChange: EventEmitter<LangChangeEvent> = new EventEmitter<LangChangeEvent>();
+
+    addTranslationFolder() {
+
+    }
+
+    public get(key: string|Array<string>, interpolateParams?: Object): Observable<string|any> {
+        return Observable.of(key);
     }
 }

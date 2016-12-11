@@ -28,8 +28,7 @@ import {
 } from '../components/widgets/core/index';
 import { WidgetVisibilityModel } from '../models/widget-visibility.model';
 import { TaskProcessVariableModel } from '../models/task-process-variable.model';
-
-let moment: any;
+import * as moment from 'moment';
 
 @Injectable()
 export class WidgetVisibilityService {

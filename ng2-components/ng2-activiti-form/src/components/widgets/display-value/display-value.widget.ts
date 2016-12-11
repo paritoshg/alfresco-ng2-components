@@ -22,8 +22,7 @@ import { FormService } from '../../../services/form.service';
 import { FormFieldOption } from './../core/form-field-option';
 import { DynamicTableColumn, DynamicTableRow } from './../dynamic-table/dynamic-table.widget.model';
 import { WidgetVisibilityService } from '../../../services/widget-visibility.service';
-
-let moment: any;
+import * as moment from 'moment';
 
 @Component({
     moduleId: module.id,

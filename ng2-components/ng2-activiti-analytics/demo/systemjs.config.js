@@ -27,9 +27,9 @@
             'ng2-charts': 'npm:ng2-charts',
             'ng2-translate': 'npm:ng2-translate',
             'alfresco-js-api': 'npm:alfresco-js-api/dist',
-            'ng2-alfresco-core': 'npm:ng2-alfresco-core/dist',
-            'ng2-activiti-diagrams': 'npm:ng2-activiti-diagrams/dist',
-            'ng2-activiti-analytics': 'npm:ng2-activiti-analytics/dist'
+            'ng2-alfresco-core': 'npm:ng2-alfresco-core',
+            'ng2-activiti-diagrams': 'npm:ng2-activiti-diagrams',
+            'ng2-activiti-analytics': 'npm:ng2-activiti-analytics'
         },
         // packages tells the System loader how to load when no filename and/or no extension
         packages: {

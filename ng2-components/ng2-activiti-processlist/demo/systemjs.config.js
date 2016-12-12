@@ -25,11 +25,11 @@
             'rxjs': 'npm:rxjs',
             'ng2-translate': 'npm:ng2-translate',
             'alfresco-js-api': 'npm:alfresco-js-api/dist',
-            'ng2-alfresco-core': 'npm:ng2-alfresco-core/dist',
-            'ng2-alfresco-datatable': 'npm:ng2-alfresco-datatable/dist',
-            'ng2-activiti-form': 'npm:ng2-activiti-form/dist',
-            'ng2-activiti-tasklist': 'npm:ng2-activiti-tasklist/dist',
-            'ng2-activiti-processlist': 'npm:ng2-activiti-processlist/dist'
+            'ng2-alfresco-core': 'npm:ng2-alfresco-core',
+            'ng2-alfresco-datatable': 'npm:ng2-alfresco-datatable',
+            'ng2-activiti-form': 'npm:ng2-activiti-form',
+            'ng2-activiti-tasklist': 'npm:ng2-activiti-tasklist',
+            'ng2-activiti-processlist': 'npm:ng2-activiti-processlist'
         },
         // packages tells the System loader how to load when no filename and/or no extension
         packages: {

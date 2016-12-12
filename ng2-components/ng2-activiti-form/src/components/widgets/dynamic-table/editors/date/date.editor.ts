@@ -15,8 +15,8 @@
  * limitations under the License.
  */
 
-import { Component, OnInit, ElementRef } from '@angular/core';
-import { CellEditorComponent } from './../cell.editor';
+import { Component, Input, OnInit, ElementRef } from '@angular/core';
+import { DynamicTableModel, DynamicTableRow, DynamicTableColumn } from './../../dynamic-table.widget.model';
 import * as moment from 'moment';
 
 declare let mdDateTimePicker: any;

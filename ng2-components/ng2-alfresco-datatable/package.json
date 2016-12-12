@@ -5,9 +5,9 @@
   "author": "Alfresco Software, Ltd.",
   "scripts": {
     "clean": "npm install rimraf && rimraf dist node_modules typings",
-    "build": "npm run tslint && rimraf dist && tsc && license-check",
-    "build:w": "npm run tslint && rimraf dist && npm run watch-task",
-    "watch-task": "concurrently \"npm run tsc:w\"  \"license-check\"",
+    "clean-build" : "rimraf index.js index.js.map index.d.ts'src/{,**/}**.js' 'src/{,**/}**.js.map' 'src/{,**/}**.d.ts'",
+    "build": "npm run clean-build && npm run tslint && rimraf dist && tsc && license-check",
+    "build:w": "npm run clean-build && npm run tslint && rimraf dist && tsc:w && license-check",
     "tslint": "tslint -c tslint.json 'src/{,**/}**.ts' 'index.ts'  -e '{,**/}**.d.ts' -e './gulpfile.ts'",
     "tsc": "tsc",
     "tsc:w": "tsc -w",
